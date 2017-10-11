@@ -4,6 +4,8 @@ import logging
 def setup(opsdroid):
     logging.debug("Loaded evaluate module")
 
-@match_regex('hi')
+@match_regex('=')
 async def hello(opsdroid, config, message):
-    await message.respond('Hey')
+    text = message.text.replace('=', '')
+    response = str(eval(text))
+    await message.respond(response)
