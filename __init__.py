@@ -1,4 +1,5 @@
-from opsdroid import match_regex
+from opsdroid.matchers import match_regex
+import logging
 
 def setup(opsdroid):
     logging.debug("Loaded evaluate module")
